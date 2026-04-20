@@ -1,6 +1,6 @@
 import { ruleNames } from '@harperfast/skills';
 import { describe, expect, it } from 'vitest';
-import { inputSchema } from './inputSchema';
+import { inputSchema } from './inputSchema.js';
 
 describe('readHarperSkill inputSchema', () => {
 	it('should validate correct input with valid skill', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { inputSchema } from './inputSchema';
+import { inputSchema } from './inputSchema.js';
 
 describe('insertTableRecords inputSchema', () => {
 	it('should validate correct input', () => {

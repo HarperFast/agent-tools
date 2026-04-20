@@ -27,6 +27,7 @@ console.log(feedbackTool.description);
 ## Available Tools
 
 ### Application Management
+
 - `readHarperSkill`: Read the content of a Harper skill.
 - `createApp`: Create a new application.
 - `readLogs`: Read application logs.
@@ -35,12 +36,14 @@ console.log(feedbackTool.description);
 - `collectFeedback`: Collect user feedback via GitHub Discussions.
 
 ### File Manipulation
+
 - `getComponentFile`: Get the content of a component file.
 - `getComponents`: List all components.
 - `setComponentFile`: Create or update a component file.
 - `dropComponentFile`: Delete a component file.
 
 ### Database Interaction
+
 - `getDescribeAll`: Describe all tables in the database.
 - `getDescribeTable`: Describe a specific table.
 - `insertTableRecords`: Insert records into a table.
@@ -53,7 +56,7 @@ console.log(feedbackTool.description);
 Each tool in `serverTools` follows the `ServerSideTool` interface:
 
 ```typescript
-import { ServerSideTool } from '@harperfast/agent-tools/types/serverSideTool';
+import { ServerSideTool } from '@harperfast/agent-tools/types/serverSideTool.js';
 ```
 
 ## Exported Types

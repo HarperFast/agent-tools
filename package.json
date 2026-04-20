@@ -1,6 +1,6 @@
 {
 	"name": "@harperfast/agent-tools",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Shares the basic schema for agent tools used by Harper.",
 	"keywords": [],
 	"homepage": "https://github.com/harperfast",
@@ -40,8 +40,8 @@
 		"format:check": "oxfmt --check",
 		"format:fix": "oxfmt --write",
 		"format:staged": "oxfmt --check --list-different",
-		"lint:check": "oxlint .",
-		"lint:fix": "oxlint . --fix",
+		"lint:check": "oxlint . --format stylish",
+		"lint:fix": "oxlint . --format stylish --fix",
 		"prepublish": "npm run build",
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",

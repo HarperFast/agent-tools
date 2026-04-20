@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import type { ServerSideTool } from '../../types/serverSideTool';
-import { inputSchema } from './inputSchema';
+import type { ServerSideTool } from '../../types/serverSideTool.js';
+import { inputSchema } from './inputSchema.js';
 
 export const serverSchema: ServerSideTool<z.infer<typeof inputSchema>> = {
 	name: 'collectFeedback',
