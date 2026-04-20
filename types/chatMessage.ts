@@ -3,5 +3,5 @@ export interface ChatMessage {
 	userId?: string;
 	role?: string;
 	parts?: any;
-	createdAt: Date;
+	createdAt: number;
 }

@@ -9,5 +9,5 @@ export interface Usage {
 	totalTokens?: number;
 	cost?: number;
 	yearMonth?: string;
-	timestamp?: string;
+	timestamp?: number;
 }
