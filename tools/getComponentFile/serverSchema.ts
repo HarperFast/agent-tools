@@ -1,0 +1,9 @@
+import { z } from 'zod';
+import type { ServerSideTool } from '../../types/serverSideTool.ts';
+import { inputSchema } from './inputSchema.ts';
+
+export const serverSchema: ServerSideTool<z.infer<typeof inputSchema>> = {
+	name: 'getComponentFile',
+	description: 'Returns the contents of a component file by its full path (which was returned by getComponents)',
+	inputSchema,
+};
