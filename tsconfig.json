@@ -12,12 +12,18 @@
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
+		"allowImportingTsExtensions": false,
 		"allowJs": true,
 		"checkJs": true,
 		"verbatimModuleSyntax": true,
 		"moduleDetection": "force",
-		"noEmit": true,
+		"noEmit": false,
+		"outDir": "dist",
+		"rootDir": ".",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
 
 		/* Linting */
 		"strict": true,
@@ -26,6 +32,6 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true
 	},
-	"include": ["**/*.js"],
+	"include": ["tools/**/*.ts", "types/**/*.ts"],
 	"exclude": ["**/*.test.js", "**/*.spec.js"]
 }

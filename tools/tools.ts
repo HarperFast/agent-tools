@@ -1,19 +1,19 @@
-import { serverSchema as collectFeedbackServerSchema } from './collectFeedback/serverSchema.ts';
-import { serverSchema as createAppServerSchema } from './createApp/serverSchema.ts';
-import { serverSchema as deleteTableRecordsServerSchema } from './deleteTableRecords/serverSchema.ts';
-import { serverSchema as dropComponentFileServerSchema } from './dropComponentFile/serverSchema.ts';
-import { serverSchema as getAnalyticsServerSchema } from './getAnalytics/serverSchema.ts';
-import { serverSchema as getComponentFileServerSchema } from './getComponentFile/serverSchema.ts';
-import { serverSchema as getComponentsServerSchema } from './getComponents/serverSchema.ts';
-import { serverSchema as getDescribeAllServerSchema } from './getDescribeAll/serverSchema.ts';
-import { serverSchema as getDescribeTableServerSchema } from './getDescribeTable/serverSchema.ts';
-import { serverSchema as insertTableRecordsServerSchema } from './insertTableRecords/serverSchema.ts';
-import { serverSchema as readHarperSkillServerSchema } from './readHarperSkill/serverSchema.ts';
-import { serverSchema as readLogsServerSchema } from './readLogs/serverSchema.ts';
-import { serverSchema as readTableRecordsServerSchema } from './readTableRecords/serverSchema.ts';
-import { serverSchema as restartHTTPServiceServerSchema } from './restartHTTPService/serverSchema.ts';
-import { serverSchema as setComponentFileServerSchema } from './setComponentFile/serverSchema.ts';
-import { serverSchema as updateTableRecordsServerSchema } from './updateTableRecords/serverSchema.ts';
+import { serverSchema as collectFeedbackServerSchema } from './collectFeedback/serverSchema';
+import { serverSchema as createAppServerSchema } from './createApp/serverSchema';
+import { serverSchema as deleteTableRecordsServerSchema } from './deleteTableRecords/serverSchema';
+import { serverSchema as dropComponentFileServerSchema } from './dropComponentFile/serverSchema';
+import { serverSchema as getAnalyticsServerSchema } from './getAnalytics/serverSchema';
+import { serverSchema as getComponentFileServerSchema } from './getComponentFile/serverSchema';
+import { serverSchema as getComponentsServerSchema } from './getComponents/serverSchema';
+import { serverSchema as getDescribeAllServerSchema } from './getDescribeAll/serverSchema';
+import { serverSchema as getDescribeTableServerSchema } from './getDescribeTable/serverSchema';
+import { serverSchema as insertTableRecordsServerSchema } from './insertTableRecords/serverSchema';
+import { serverSchema as readHarperSkillServerSchema } from './readHarperSkill/serverSchema';
+import { serverSchema as readLogsServerSchema } from './readLogs/serverSchema';
+import { serverSchema as readTableRecordsServerSchema } from './readTableRecords/serverSchema';
+import { serverSchema as restartHTTPServiceServerSchema } from './restartHTTPService/serverSchema';
+import { serverSchema as setComponentFileServerSchema } from './setComponentFile/serverSchema';
+import { serverSchema as updateTableRecordsServerSchema } from './updateTableRecords/serverSchema';
 
 export const serverTools = {
 	// Application management.
@@ -36,5 +36,3 @@ export const serverTools = {
 	updateTableRecords: updateTableRecordsServerSchema,
 	deleteTableRecords: deleteTableRecordsServerSchema,
 };
-
-export type ToolNames = keyof typeof serverTools;
