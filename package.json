@@ -1,6 +1,6 @@
 {
 	"name": "@harperfast/agent-tools",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Shares the basic schema for agent tools used by Harper.",
 	"keywords": [],
 	"homepage": "https://github.com/harperfast",
@@ -28,6 +28,10 @@
 		".": {
 			"types": "./dist/tools/tools.d.ts",
 			"import": "./dist/tools/tools.js"
+		},
+		"./tools/*": {
+			"types": "./dist/tools/*.d.ts",
+			"import": "./dist/tools/*.js"
 		},
 		"./types/*": {
 			"types": "./dist/types/*.d.ts",
