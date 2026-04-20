@@ -1,11 +1,11 @@
 {
 	"name": "@harperfast/agent-tools",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Shares the basic schema for agent tools used by Harper.",
 	"keywords": [],
 	"homepage": "https://github.com/harperfast",
 	"bugs": {
-		"url": "https://github.com/harperfast/schema-codegen/issues"
+		"url": "https://github.com/harperfast/agent-tools/issues"
 	},
 	"license": "Apache-2.0",
 	"author": {

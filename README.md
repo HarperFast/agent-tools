@@ -1,103 +1,111 @@
-# @HarperFast/Schema-Codegen
+# @harperfast/agent-tools
 
-Schema Codegen will generate TypeScript types for your GraphQL schemas, making it easier to work with your data in TypeScript and JavaScript applications.
+Shares the basic schema for agent tools used by Harper.
+
+This repository contains the definitions and Zod schemas for various tools used by Harper agents. These tools are categorized into application management, file manipulation, and database interaction.
 
 ## Installation
 
-Install this with your favorite package manager!
-
 ```bash
-npm install --save @harperfast/schema-codegen
+npm install @harperfast/agent-tools
 ```
 
-Drop this in your Harper application's config.yaml:
+## Usage
 
-```yaml
-'@harperfast/schema-codegen':
-  package: '@harperfast/schema-codegen'
-  globalTypes: 'schemas/globalTypes.d.ts'
-  schemaTypes: 'schemas/types.ts'
-```
-
-Alternatively, if you are using pure JavaScript, you can generate JSDoc instead:
-
-```yaml
-'@harperfast/schema-codegen':
-  package: '@harperfast/schema-codegen'
-  jsdoc: 'schemas/jsdocTypes.js'
-```
-
-When you `harper dev`, it will generate types based on the schema that's actually in your Harper database. If you change the schema, we will automatically regenerate the types for you.
-
-## Example
-
-For example, here's a tracks.graphql schema:
-
-```graphql
-type Tracks @table @sealed {
-	id: ID @primaryKey
-	name: String! @indexed
-	mp3: Blob
-}
-```
-
-Next to it, a schemas/types.ts file will get generated with this:
+The package exports `serverTools`, which contains schemas for all available tools.
 
 ```typescript
-/**
- Generated from HarperDB schema
- Manual changes will be lost!
- > harper dev .
- */
-export interface Track {
-	id: string;
-	name: string;
-	mp3?: any;
-}
+import { serverTools } from '@harperfast/agent-tools';
 
-export type NewTrack = Omit<Track, 'id'>;
-export type Tracks = Track[];
-export type { Track as TrackRecord };
-export type TrackRecords = Track[];
-export type NewTrackRecord = Omit<Track, 'id'>;
+// Access a specific tool schema
+const feedbackTool = serverTools.collectFeedback;
+
+console.log(feedbackTool.name); // 'collectFeedback'
+console.log(feedbackTool.description);
 ```
 
-An ambient declaration will also be generated in globalTypes.d.ts to enhance the global `tables` and `databases` from Harper:
+## Available Tools
+
+### Application Management
+- `readHarperSkill`: Read the content of a Harper skill.
+- `createApp`: Create a new application.
+- `readLogs`: Read application logs.
+- `getAnalytics`: Get application analytics.
+- `restartHTTPService`: Restart the HTTP service.
+- `collectFeedback`: Collect user feedback via GitHub Discussions.
+
+### File Manipulation
+- `getComponentFile`: Get the content of a component file.
+- `getComponents`: List all components.
+- `setComponentFile`: Create or update a component file.
+- `dropComponentFile`: Delete a component file.
+
+### Database Interaction
+- `getDescribeAll`: Describe all tables in the database.
+- `getDescribeTable`: Describe a specific table.
+- `insertTableRecords`: Insert records into a table.
+- `readTableRecords`: Read records from a table.
+- `updateTableRecords`: Update records in a table.
+- `deleteTableRecords`: Delete records from a table.
+
+### Tool Structure
+
+Each tool in `serverTools` follows the `ServerSideTool` interface:
 
 ```typescript
-/**
- Generated from your schema files
- Manual changes will be lost!
- > harper dev .
- */
-import type { Table } from 'harperdb';
-import type { Track } from './types.ts';
+import { ServerSideTool } from '@harperfast/agent-tools/types/serverSideTool';
+```
 
-declare module 'harperdb' {
-	export const tables: {
-		Tracks: { new (...args: any[]): Table<Track> };
-	};
-	export const databases: {
-		data: {
-			Tracks: { new (...args: any[]): Table<Track> };
-		};
-	};
-}
+## Exported Types
+
+The package also exports several utility types used across Harper agent services.
+
+### Chat Messages
+
+Used for representing messages in a chat conversation.
+
+```typescript
+import { ChatMessage, NewChatMessage } from '@harperfast/agent-tools/types/chatMessage';
+```
+
+### Usage Tracking
+
+Used for monitoring token usage and costs associated with LLM calls.
+
+```typescript
+import { Usage } from '@harperfast/agent-tools/types/usage';
+import { NewUsage } from '@harperfast/agent-tools/types/newUsage';
+```
+
+### Tool Names
+
+A union type of all available tool names in `serverTools`.
+
+```typescript
+import { ToolNames } from '@harperfast/agent-tools/types/toolNames';
 ```
 
 ## Development
 
-To use this in an application, first link it:
+### Build
 
 ```bash
-git clone git@github.com:HarperFast/schema-codegen.git
-cd schema-codegen
-npm link
+npm run build
 ```
 
-Then cd to your awesome application you want to test this with:
+### Linting and Formatting
 
 ```bash
-cd ~/my-awesome-app
-npm link @harperfast/schema-codegen
+npm run lint:check
+npm run format:check
 ```
+
+### Testing
+
+```bash
+npm test
+```
+
+## License
+
+Apache-2.0
