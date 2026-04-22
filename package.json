@@ -67,7 +67,7 @@
 		"@types/react": "^19.2.10",
 		"@vitest/coverage-v8": "^4.0.18",
 		"conventional-changelog-conventionalcommits": "^9.1.0",
-		"oxfmt": "^0.43.0",
+		"oxfmt": "^0.45.0",
 		"oxlint": "^1.51.0",
 		"semantic-release": "^25.0.2",
 		"vitest": "^4.0.18"
