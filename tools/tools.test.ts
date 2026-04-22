@@ -3,7 +3,7 @@ import { serverTools } from './tools';
 
 describe('serverTools', () => {
 	it('should export all expected tools', () => {
-		const someTools = ['readHarperSkill', 'createApp', 'readLogs'];
+		const someTools = ['readHarperSkill', 'createApp', 'readLogs', 'getUserContext'];
 
 		for (const toolName of someTools) {
 			expect(serverTools).toHaveProperty(toolName);

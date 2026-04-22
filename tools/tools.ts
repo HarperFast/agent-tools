@@ -7,6 +7,7 @@ import { serverSchema as getComponentFileServerSchema } from './getComponentFile
 import { serverSchema as getComponentsServerSchema } from './getComponents/serverSchema.js';
 import { serverSchema as getDescribeAllServerSchema } from './getDescribeAll/serverSchema.js';
 import { serverSchema as getDescribeTableServerSchema } from './getDescribeTable/serverSchema.js';
+import { serverSchema as getUserContextServerSchema } from './getUserContext/serverSchema.js';
 import { serverSchema as insertTableRecordsServerSchema } from './insertTableRecords/serverSchema.js';
 import { serverSchema as readHarperSkillServerSchema } from './readHarperSkill/serverSchema.js';
 import { serverSchema as readLogsServerSchema } from './readLogs/serverSchema.js';
@@ -23,6 +24,7 @@ export const serverTools = {
 	getAnalytics: getAnalyticsServerSchema,
 	restartHTTPService: restartHTTPServiceServerSchema,
 	collectFeedback: collectFeedbackServerSchema,
+	getUserContext: getUserContextServerSchema,
 	// File manipulation.
 	getComponentFile: getComponentFileServerSchema,
 	getComponents: getComponentsServerSchema,
