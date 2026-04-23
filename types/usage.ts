@@ -1,6 +1,7 @@
 export interface Usage {
 	id: string;
-	userId?: string;
+	orgId: string;
+	userId: string;
 	modelId?: string;
 	inputTokens?: number;
 	outputTokens?: number;
