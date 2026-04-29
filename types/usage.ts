@@ -3,6 +3,7 @@ export interface Usage {
 	orgId: string;
 	userId: string;
 	modelId?: string;
+	provider?: string;
 	inputTokens?: number;
 	outputTokens?: number;
 	cacheReadTokens?: number;
