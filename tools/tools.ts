@@ -9,6 +9,7 @@ import { serverSchema as getDescribeAllServerSchema } from './getDescribeAll/ser
 import { serverSchema as getDescribeTableServerSchema } from './getDescribeTable/serverSchema.js';
 import { serverSchema as getUserContextServerSchema } from './getUserContext/serverSchema.js';
 import { serverSchema as insertTableRecordsServerSchema } from './insertTableRecords/serverSchema.js';
+import { serverSchema as listAnalyticsMetricsServerSchema } from './listAnalyticsMetrics/serverSchema.js';
 import { serverSchema as readHarperSkillServerSchema } from './readHarperSkill/serverSchema.js';
 import { serverSchema as readLogsServerSchema } from './readLogs/serverSchema.js';
 import { serverSchema as readTableRecordsServerSchema } from './readTableRecords/serverSchema.js';
@@ -21,6 +22,7 @@ export const serverTools = {
 	readHarperSkill: readHarperSkillServerSchema,
 	createApp: createAppServerSchema,
 	readLogs: readLogsServerSchema,
+	listAnalyticsMetrics: listAnalyticsMetricsServerSchema,
 	getAnalytics: getAnalyticsServerSchema,
 	restartHTTPService: restartHTTPServiceServerSchema,
 	collectFeedback: collectFeedbackServerSchema,
