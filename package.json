@@ -27,7 +27,8 @@
 	"exports": {
 		".": {
 			"types": "./dist/tools/tools.d.ts",
-			"import": "./dist/tools/tools.js"
+			"import": "./dist/tools/tools.js",
+			"default": "./dist/tools/tools.js"
 		},
 		"./tools/*": {
 			"types": "./dist/tools/*.d.ts",
