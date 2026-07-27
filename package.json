@@ -1,6 +1,6 @@
 {
 	"name": "@harperfast/agent-tools",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "Shares the basic schema for agent tools used by Harper.",
 	"keywords": [],
 	"homepage": "https://github.com/harperfast",
