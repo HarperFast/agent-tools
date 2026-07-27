@@ -68,7 +68,7 @@
 		"@types/react": "^19.2.10",
 		"@vitest/coverage-v8": "^4.0.18",
 		"argue-cli": "^3.1.0",
-		"conventional-changelog-conventionalcommits": "^10.0.0",
+		"conventional-changelog-conventionalcommits": "^9.3.1",
 		"conventional-commits-filter": "^6.0.1",
 		"conventional-commits-parser": "^7.1.0",
 		"create-harper": "^1.9.0",
